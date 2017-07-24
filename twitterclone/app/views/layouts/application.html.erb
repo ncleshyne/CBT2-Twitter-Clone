@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="pull-left"><a href="/articles"><i class="fa fa-home fa-lg" aria-hidden="true"></i>Home</a></li>
+            <li class="pull-left"><a href="#"><i class="fa fa-bell fa-lg" aria-hidden="true"></i>Notifications</a></li>
+            <li class="pull-left"><a href="#"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>Messages</a></li>
+            <li><a href="/users/sign_up"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+            <li class="social pull-right tweet"><a href="/articles/new" class="btn"><i class="fa fa-twitter n" aria-hidden="true"></i><span class="twit">Tweet</span></a></li>
+            <li class="social pull-right"><a href="/articles" class="names">Profile</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

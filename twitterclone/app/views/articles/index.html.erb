@@ -1,0 +1,24 @@
+<h1>Feed</h1>
+<a class="new" href="/articles/new">New tweet</a>
+<br>
+<br>
+<br>
+
+<div class="container con">
+<div class="row">
+  <% @articles.each do |article| %>
+      <div class="col-md-4 box">
+      <h1 class="title">Title</h1>
+      <%= article.title %><br>
+      <h2 class="text">Text</h2>
+      <%= truncate(article.text, length:65) %><br>
+      <h3 class="none"></h3><br><br>
+      <%= link_to "Show\t", article_path(article), class: 'action' %>
+      <%= link_to "\tEdit\t", edit_article_path(article), class: 'action' %>
+      <%= link_to "\tDelete", article_path(article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class: 'action' %>
+      </div>
+  <% end %>
+</div>
+</div>
